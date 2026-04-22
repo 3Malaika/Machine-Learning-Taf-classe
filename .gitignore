@@ -1,0 +1,10 @@
+# Tout ignorer sauf le dossier streamlit
+*
+!streamlit/
+!streamlit/**
+!.gitignore
+
+# Exclure explicitement les fichiers lourds dans streamlit
+streamlit/assets/*.mp4
+streamlit/assets/*.avi
+streamlit/assets/*.mov
