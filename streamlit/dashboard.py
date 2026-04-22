@@ -5,7 +5,7 @@ import streamlit as st
 import seaborn as sns
 import time
 
-df = pd.read_csv('./bank.csv')
+df = pd.read_csv('bank.csv')
 st.set_page_config(page_title='Real Time Scence Dashboard', page_icon='+',layout='wide')
 
 # dashboard title 
