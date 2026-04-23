@@ -4,8 +4,16 @@ import matplotlib.pyplot as plt
 import streamlit as st
 import seaborn as sns
 import time
+import pandas as pd
+from pathlib import Path
 
-df = pd.read_csv('./bank.csv')
+
+current_dir = Path(__file__).parent 
+
+
+file_path = current_dir / 'bank.csv'
+
+df = pd.read_csv(file_path)
 st.set_page_config(page_title='Real Time Scence Dashboard', page_icon='+',layout='wide')
 
 # dashboard title 
