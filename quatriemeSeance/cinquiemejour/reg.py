@@ -5,12 +5,18 @@ import pickle
 from sklearn.preprocessing import LabelEncoder
 import time 
 
-
 import os
-BASE_DIR = os.path.dirname(__file__)
-with open(os.path.join(BASE_DIR, '../../Second-jour-cour/reg.pkl'), 'rb') as file:
-    model = pickle.load(file)
+import pickle
+from pathlib import Path
 
+
+BASE_DIR = Path(__file__).resolve().parent
+
+
+pkl_path = BASE_DIR / 'reg.pkl'
+
+with open(pkl_path, 'rb') as file:
+    model = pickle.load(file)
 st.set_page_config(page_title="Predicteur de charges medicales")
 st.title("Prediction de charges medicales")
 st.markdown("Remplis les informations ci dessous pour predire tes charges")
