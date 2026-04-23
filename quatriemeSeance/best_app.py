@@ -11,7 +11,19 @@ def load_data(dataset):
     df = pd.read_csv(dataset)
     return df
 
-st.sidebar.image('diabets.jpg',width=200)
+import streamlit as st
+from pathlib import Path
+
+
+BASE_DIR = Path(__file__).resolve().parent
+
+
+image_path = BASE_DIR / 'diabets.jpg'
+
+if image_path.exists():
+    st.sidebar.image(str(image_path), width=200)
+else:
+    st.sidebar.warning(f"Image introuvable : {image_path.name}")
 def main():
     st.markdown("<h1 style='text-align:center;color: brown;'>Streamlit Diabetis App</h1>",unsafe_allow_html=True)
     st.markdown("<h2 style='text-align:center;color: black;'>Diabetis study in Cameroon</h2>",unsafe_allow_html=True)
